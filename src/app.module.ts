@@ -6,6 +6,7 @@ import { AssetsModule } from './assets/assets.module';
 import { AuthenticationModule } from './authentication/authentication.module';
 import { DatabaseModule } from './database/database.module';
 import { UsersModule } from './users/users.module';
+import { OwnedHeroModule } from './owned-hero/owned-hero.module';
 
 @Module({
   imports: [ConfigModule.forRoot(),
@@ -13,6 +14,7 @@ import { UsersModule } from './users/users.module';
     AuthenticationModule,
     UsersModule,
     AssetsModule,
+    OwnedHeroModule,
   ],
   controllers: [AppController],
   providers: [AppService],

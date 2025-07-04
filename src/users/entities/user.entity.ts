@@ -1,9 +1,11 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { hashSync } from 'bcryptjs';
+import { OwnedHero } from 'src/owned-hero/entities/owned-hero.entity';
 import {
   Column,
   CreateDateColumn,
   Entity,
+  OneToMany,
   PrimaryGeneratedColumn,
   Unique,
   UpdateDateColumn
@@ -45,6 +47,9 @@ export class User {
     description: 'User last updated date',
   })
   updated?: Date;
+
+  @OneToMany(() => OwnedHero, (ownedHero) => ownedHero.user)
+  ownedHeroes: OwnedHero[];
 
   private tempPassword?: string;
 
