@@ -1,0 +1,38 @@
+import { Enemy } from "src/assets/interfaces/enemy.interface";
+
+export const sandWitch: Enemy = {
+  id: 10,
+  name: 'Sand Witch',
+  description: 'Mysterious sorceress with control over desert winds.',
+  biome: 'desert',
+  hp: 700,
+  defense: 50,
+  speed: 80,
+  evasion: 0.06,
+  ability: {
+    name: 'Dust Storm',
+    description: 'AoE attack that lowers enemy speed for 2 turns.',
+    attack: 140,
+    heal: 0,
+    critChance: 0.07,
+    critPower: 1.5,
+    defense: 0,
+    speed: -20,
+    evation: 0,
+    duration: 2,
+    target: 'AoE',
+  },
+  basicAttack: {
+    name: 'Magic Missile',
+    description: 'Basic magic attack.',
+    attack: 90,
+    heal: 0,
+    critChance: 0.05,
+    critPower: 1.5,
+    defense: 0,
+    speed: 0,
+    evation: 0,
+    duration: 0,
+    target: 'single',
+  },
+};

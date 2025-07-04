@@ -1,0 +1,38 @@
+import { Enemy } from "src/assets/interfaces/enemy.interface";
+
+export const forestSpider: Enemy = {
+  id: 3,
+  name: 'Forest Spider',
+  description: 'Poisonous spider with fast attacks.',
+  biome: 'forest',
+  hp: 500,
+  defense: 35,
+  speed: 95,
+  evasion: 0.08,
+  ability: {
+    name: 'Poison Bite',
+    description: 'Poisons a single enemy for 3 turns.',
+    attack: 0,
+    heal: 0,
+    critChance: 0,
+    critPower: 1,
+    defense: 0,
+    speed: 0,
+    evation: 0,
+    duration: 3,
+    target: 'single',
+  },
+  basicAttack: {
+    name: 'Bite',
+    description: 'Quick venomous bite.',
+    attack: 90,
+    heal: 0,
+    critChance: 0.06,
+    critPower: 1.4,
+    defense: 0,
+    speed: 0,
+    evation: 0,
+    duration: 0,
+    target: 'single',
+  },
+};

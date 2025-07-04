@@ -1,0 +1,38 @@
+import { Enemy } from "src/assets/interfaces/enemy.interface";
+
+export const scorchingMummy: Enemy = {
+  id: 8,
+  name: 'Scorching Mummy',
+  description: 'Ancient cursed warrior wrapped in bandages.',
+  biome: 'desert',
+  hp: 1000,
+  defense: 70,
+  speed: 40,
+  evasion: 0.02,
+  ability: {
+    name: 'Curse of Flames',
+    description: 'Deals damage over time to all enemies for 3 turns.',
+    attack: 40,
+    heal: 0,
+    critChance: 0,
+    critPower: 1,
+    defense: 0,
+    speed: -10,
+    evation: 0,
+    duration: 3,
+    target: 'AoE',
+  },
+  basicAttack: {
+    name: 'Bandage Slam',
+    description: 'Heavy melee attack.',
+    attack: 150,
+    heal: 0,
+    critChance: 0.05,
+    critPower: 1.6,
+    defense: 0,
+    speed: 0,
+    evation: 0,
+    duration: 0,
+    target: 'single',
+  },
+};

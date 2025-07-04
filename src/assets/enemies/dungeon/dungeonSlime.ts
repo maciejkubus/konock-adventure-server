@@ -1,0 +1,38 @@
+import { Enemy } from "src/assets/interfaces/enemy.interface";
+
+export const dungeonSlime: Enemy = {
+  id: 19,
+  name: 'Dungeon Slime',
+  description: 'An acidic slime mutated by dark energy.',
+  biome: 'dungeon',
+  hp: 950,
+  defense: 100,
+  speed: 30,
+  evasion: 0.01,
+  ability: {
+    name: 'Corrode',
+    description: 'Deals damage and reduces enemy defense for 3 turns.',
+    attack: 60,
+    heal: 0,
+    critChance: 0.05,
+    critPower: 1.3,
+    defense: -20,
+    speed: 0,
+    evation: 0,
+    duration: 3,
+    target: 'AoE',
+  },
+  basicAttack: {
+    name: 'Acid Splash',
+    description: 'Deals minor acid damage.',
+    attack: 100,
+    heal: 0,
+    critChance: 0.05,
+    critPower: 1.4,
+    defense: 0,
+    speed: 0,
+    evation: 0,
+    duration: 0,
+    target: 'single',
+  },
+};

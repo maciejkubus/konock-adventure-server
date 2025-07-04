@@ -1,0 +1,38 @@
+import { Enemy } from "src/assets/interfaces/enemy.interface";
+
+export const sandScorpion: Enemy = {
+  id: 6,
+  name: 'Sand Scorpion',
+  description: 'Deadly scorpion lurking in desert sands.',
+  biome: 'desert',
+  hp: 700,
+  defense: 60,
+  speed: 75,
+  evasion: 0.04,
+  ability: {
+    name: 'Poison Sting',
+    description: 'Poisons a single enemy for 3 turns.',
+    attack: 0,
+    heal: 0,
+    critChance: 0,
+    critPower: 1,
+    defense: 0,
+    speed: 0,
+    evation: 0,
+    duration: 3,
+    target: 'single',
+  },
+  basicAttack: {
+    name: 'Sting Attack',
+    description: 'Piercing sting attack.',
+    attack: 130,
+    heal: 0,
+    critChance: 0.07,
+    critPower: 1.6,
+    defense: 0,
+    speed: 0,
+    evation: 0,
+    duration: 0,
+    target: 'single',
+  },
+};

@@ -1,0 +1,38 @@
+import { Enemy } from "src/assets/interfaces/enemy.interface";
+
+export const caveBat: Enemy = {
+  id: 11,
+  name: 'Cave Bat',
+  description: 'Swift and sneaky cave dweller.',
+  biome: 'caves',
+  hp: 550,
+  defense: 35,
+  speed: 100,
+  evasion: 0.08,
+  ability: {
+    name: 'Screech',
+    description: 'Disorients enemies for 1 turn.',
+    attack: 0,
+    heal: 0,
+    critChance: 0,
+    critPower: 1,
+    defense: 0,
+    speed: -20,
+    evation: 0,
+    duration: 1,
+    target: 'AoE',
+  },
+  basicAttack: {
+    name: 'Claw Swipe',
+    description: 'Quick melee attack.',
+    attack: 85,
+    heal: 0,
+    critChance: 0.06,
+    critPower: 1.4,
+    defense: 0,
+    speed: 0,
+    evation: 0,
+    duration: 0,
+    target: 'single',
+  },
+};

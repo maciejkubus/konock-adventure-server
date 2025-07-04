@@ -1,0 +1,38 @@
+import { Enemy } from "src/assets/interfaces/enemy.interface";
+
+export const duneSerpent: Enemy = {
+  id: 9,
+  name: 'Dune Serpent',
+  description: 'Long snake that hides under the desert sand.',
+  biome: 'desert',
+  hp: 650,
+  defense: 45,
+  speed: 95,
+  evasion: 0.09,
+  ability: {
+    name: 'Sand Ambush',
+    description: 'Surprises enemy with a high damage strike.',
+    attack: 180,
+    heal: 0,
+    critChance: 0.12,
+    critPower: 1.7,
+    defense: 0,
+    speed: 0,
+    evation: 0,
+    duration: 0,
+    target: 'single',
+  },
+  basicAttack: {
+    name: 'Bite',
+    description: 'Fast snake bite.',
+    attack: 100,
+    heal: 0,
+    critChance: 0.05,
+    critPower: 1.4,
+    defense: 0,
+    speed: 0,
+    evation: 0,
+    duration: 0,
+    target: 'single',
+  },
+};

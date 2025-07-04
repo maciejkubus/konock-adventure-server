@@ -1,0 +1,38 @@
+import { Enemy } from "src/assets/interfaces/enemy.interface";
+
+export const undeadKnight: Enemy = {
+  id: 17,
+  name: 'Undead Knight',
+  description: 'A fallen warrior risen by dark magic.',
+  biome: 'dungeon',
+  hp: 1200,
+  defense: 110,
+  speed: 40,
+  evasion: 0.02,
+  ability: {
+    name: 'Shield of Bones',
+    description: 'Increases defense and reflects damage for 2 turns.',
+    attack: 0,
+    heal: 0,
+    critChance: 0,
+    critPower: 1,
+    defense: 30,
+    speed: 0,
+    evation: 0,
+    duration: 2,
+    target: 'self',
+  },
+  basicAttack: {
+    name: 'Heavy Slash',
+    description: 'Slow but strong sword swing.',
+    attack: 170,
+    heal: 0,
+    critChance: 0.08,
+    critPower: 1.8,
+    defense: 0,
+    speed: 0,
+    evation: 0,
+    duration: 0,
+    target: 'single',
+  },
+};

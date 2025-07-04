@@ -1,0 +1,38 @@
+import { Enemy } from "src/assets/interfaces/enemy.interface";
+
+export const caveTroll: Enemy = {
+  id: 13,
+  name: 'Cave Troll',
+  description: 'Large and tough cave dweller.',
+  biome: 'caves',
+  hp: 1400,
+  defense: 120,
+  speed: 25,
+  evasion: 0.02,
+  ability: {
+    name: 'Smash',
+    description: 'Crushes enemies, lowering their defense for 2 turns.',
+    attack: 0,
+    heal: 0,
+    critChance: 0,
+    critPower: 1,
+    defense: -20,
+    speed: 0,
+    evation: 0,
+    duration: 2,
+    target: 'AoE',
+  },
+  basicAttack: {
+    name: 'Club Swing',
+    description: 'Heavy melee attack.',
+    attack: 180,
+    heal: 0,
+    critChance: 0.1,
+    critPower: 1.9,
+    defense: 0,
+    speed: 0,
+    evation: 0,
+    duration: 0,
+    target: 'single',
+  },
+};

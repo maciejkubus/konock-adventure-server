@@ -1,0 +1,38 @@
+import { Enemy } from "src/assets/interfaces/enemy.interface";
+
+export const forestBear: Enemy = {
+  id: 2,
+  name: 'Forest Bear',
+  description: 'Strong but slow bear.',
+  biome: 'forest',
+  hp: 1200,
+  defense: 90,
+  speed: 30,
+  evasion: 0.02,
+  ability: {
+    name: 'Roar',
+    description: 'Reduces enemy attack for 2 turns.',
+    attack: 0,
+    heal: 0,
+    critChance: 0,
+    critPower: 1,
+    defense: 0,
+    speed: 0,
+    evation: 0,
+    duration: 2,
+    target: 'AoE',
+  },
+  basicAttack: {
+    name: 'Claw Swipe',
+    description: 'Heavy claw attack.',
+    attack: 160,
+    heal: 0,
+    critChance: 0.1,
+    critPower: 1.7,
+    defense: 0,
+    speed: 0,
+    evation: 0,
+    duration: 0,
+    target: 'single',
+  },
+};

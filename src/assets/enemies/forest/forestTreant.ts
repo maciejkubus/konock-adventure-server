@@ -1,0 +1,38 @@
+import { Enemy } from "src/assets/interfaces/enemy.interface";
+
+export const forestTreant: Enemy = {
+  id: 4,
+  name: 'Forest Treant',
+  description: 'Ancient tree guardian.',
+  biome: 'forest',
+  hp: 1300,
+  defense: 120,
+  speed: 25,
+  evasion: 0.01,
+  ability: {
+    name: 'Root Snare',
+    description: 'Immobilizes enemies for 1 turn.',
+    attack: 0,
+    heal: 0,
+    critChance: 0,
+    critPower: 1,
+    defense: 0,
+    speed: -30,
+    evation: 0,
+    duration: 1,
+    target: 'AoE',
+  },
+  basicAttack: {
+    name: 'Branch Slam',
+    description: 'Powerful melee attack.',
+    attack: 180,
+    heal: 0,
+    critChance: 0.07,
+    critPower: 1.8,
+    defense: 0,
+    speed: 0,
+    evation: 0,
+    duration: 0,
+    target: 'single',
+  },
+};

@@ -1,0 +1,38 @@
+import { Enemy } from "src/assets/interfaces/enemy.interface";
+
+export const dungeonRat: Enemy = {
+  id: 16,
+  name: 'Dungeon Rat',
+  description: 'Filthy, oversized rat with sharp fangs.',
+  biome: 'dungeon',
+  hp: 500,
+  defense: 30,
+  speed: 85,
+  evasion: 0.06,
+  ability: {
+    name: 'Infectious Bite',
+    description: 'Applies disease that reduces healing for 3 turns.',
+    attack: 80,
+    heal: 0,
+    critChance: 0.05,
+    critPower: 1.4,
+    defense: 0,
+    speed: 0,
+    evation: 0,
+    duration: 3,
+    target: 'single',
+  },
+  basicAttack: {
+    name: 'Gnaw',
+    description: 'Bite attack with slight poison.',
+    attack: 90,
+    heal: 0,
+    critChance: 0.07,
+    critPower: 1.3,
+    defense: 0,
+    speed: 0,
+    evation: 0,
+    duration: 0,
+    target: 'single',
+  },
+};

@@ -1,0 +1,38 @@
+import { Enemy } from "src/assets/interfaces/enemy.interface";
+
+export const caveWraith: Enemy = {
+  id: 15,
+  name: 'Cave Wraith',
+  description: 'Ghostly apparition haunting the caves.',
+  biome: 'caves',
+  hp: 700,
+  defense: 50,
+  speed: 90,
+  evasion: 0.12,
+  ability: {
+    name: 'Fear',
+    description: 'Causes enemies to skip their next turn.',
+    attack: 0,
+    heal: 0,
+    critChance: 0,
+    critPower: 1,
+    defense: 0,
+    speed: 0,
+    evation: 0,
+    duration: 1,
+    target: 'AoE',
+  },
+  basicAttack: {
+    name: 'Chill Touch',
+    description: 'Cold touch that lowers enemy speed.',
+    attack: 80,
+    heal: 0,
+    critChance: 0.05,
+    critPower: 1.4,
+    defense: 0,
+    speed: -10,
+    evation: 0,
+    duration: 0,
+    target: 'single',
+  },
+};

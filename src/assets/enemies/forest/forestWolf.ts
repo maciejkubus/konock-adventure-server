@@ -1,0 +1,38 @@
+import { Enemy } from "src/assets/interfaces/enemy.interface";
+
+export const forestWolf: Enemy = {
+  id: 1,
+  name: 'Forest Wolf',
+  description: 'A wild wolf roaming the forest.',
+  biome: 'forest',
+  hp: 600,
+  defense: 40,
+  speed: 90,
+  evasion: 0.07,
+  ability: {
+    name: 'Howl',
+    description: 'Boosts own speed for 2 turns.',
+    attack: 0,
+    heal: 0,
+    critChance: 0,
+    critPower: 1,
+    defense: 0,
+    speed: 20,
+    evation: 0,
+    duration: 2,
+    target: 'self',
+  },
+  basicAttack: {
+    name: 'Bite',
+    description: 'Fast bite attack.',
+    attack: 100,
+    heal: 0,
+    critChance: 0.05,
+    critPower: 1.5,
+    defense: 0,
+    speed: 0,
+    evation: 0,
+    duration: 0,
+    target: 'single',
+  },
+};

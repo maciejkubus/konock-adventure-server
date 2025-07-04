@@ -1,0 +1,38 @@
+import { Enemy } from "src/assets/interfaces/enemy.interface";
+
+export const forestHawk: Enemy = {
+  id: 5,
+  name: 'Forest Hawk',
+  description: 'Sharp-eyed flying predator.',
+  biome: 'forest',
+  hp: 700,
+  defense: 50,
+  speed: 110,
+  evasion: 0.1,
+  ability: {
+    name: 'Dive Bomb',
+    description: 'High damage AoE attack from above.',
+    attack: 200,
+    heal: 0,
+    critChance: 0.1,
+    critPower: 1.7,
+    defense: 0,
+    speed: 0,
+    evation: 0,
+    duration: 0,
+    target: 'AoE',
+  },
+  basicAttack: {
+    name: 'Talon Strike',
+    description: 'Fast claw attack.',
+    attack: 95,
+    heal: 0,
+    critChance: 0.06,
+    critPower: 1.5,
+    defense: 0,
+    speed: 0,
+    evation: 0,
+    duration: 0,
+    target: 'single',
+  },
+};

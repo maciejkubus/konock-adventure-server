@@ -1,0 +1,38 @@
+import { Enemy } from "src/assets/interfaces/enemy.interface";
+
+export const desertBandit: Enemy = {
+  id: 7,
+  name: 'Desert Bandit',
+  description: 'Ruthless thief surviving in harsh deserts.',
+  biome: 'desert',
+  hp: 800,
+  defense: 50,
+  speed: 85,
+  evasion: 0.06,
+  ability: {
+    name: 'Sand Throw',
+    description: 'Blinds enemies reducing their accuracy for 2 turns.',
+    attack: 0,
+    heal: 0,
+    critChance: 0,
+    critPower: 1,
+    defense: 0,
+    speed: 0,
+    evation: 0,
+    duration: 2,
+    target: 'AoE',
+  },
+  basicAttack: {
+    name: 'Dagger Slash',
+    description: 'Quick melee attack.',
+    attack: 110,
+    heal: 0,
+    critChance: 0.08,
+    critPower: 1.5,
+    defense: 0,
+    speed: 0,
+    evation: 0,
+    duration: 0,
+    target: 'single',
+  },
+};

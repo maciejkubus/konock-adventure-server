@@ -1,0 +1,38 @@
+import { Enemy } from "src/assets/interfaces/enemy.interface";
+
+export const necromancer: Enemy = {
+  id: 18,
+  name: 'Necromancer',
+  description: 'Dark sorcerer who manipulates life and death.',
+  biome: 'dungeon',
+  hp: 800,
+  defense: 60,
+  speed: 70,
+  evasion: 0.05,
+  ability: {
+    name: 'Raise Dead',
+    description: 'Heals self and buffs evasion for 2 turns.',
+    attack: 0,
+    heal: 200,
+    critChance: 0,
+    critPower: 1,
+    defense: 0,
+    speed: 0,
+    evation: 0.05,
+    duration: 2,
+    target: 'self',
+  },
+  basicAttack: {
+    name: 'Dark Bolt',
+    description: 'Deals dark magic damage.',
+    attack: 120,
+    heal: 0,
+    critChance: 0.07,
+    critPower: 1.6,
+    defense: 0,
+    speed: 0,
+    evation: 0,
+    duration: 0,
+    target: 'single',
+  },
+};

@@ -1,0 +1,38 @@
+import { Enemy } from "src/assets/interfaces/enemy.interface";
+
+export const caveSpider: Enemy = {
+  id: 12,
+  name: 'Cave Spider',
+  description: 'Venomous spider lurking in dark caves.',
+  biome: 'caves',
+  hp: 600,
+  defense: 40,
+  speed: 85,
+  evasion: 0.07,
+  ability: {
+    name: 'Venom Spray',
+    description: 'Poisons all enemies for 3 turns.',
+    attack: 0,
+    heal: 0,
+    critChance: 0,
+    critPower: 1,
+    defense: 0,
+    speed: 0,
+    evation: 0,
+    duration: 3,
+    target: 'AoE',
+  },
+  basicAttack: {
+    name: 'Bite',
+    description: 'Venomous bite.',
+    attack: 90,
+    heal: 0,
+    critChance: 0.07,
+    critPower: 1.5,
+    defense: 0,
+    speed: 0,
+    evation: 0,
+    duration: 0,
+    target: 'single',
+  },
+};
