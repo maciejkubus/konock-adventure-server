@@ -9,6 +9,7 @@ import {
 } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
 import { HeroTier } from 'src/assets/interfaces/hero.interface';
+import { FuseHeroesDto } from './dto/fuse-heroes.dto';
 import { OwnedHeroOwnershipGuard } from './guards/owned-hero-ownership.guard';
 import { OwnedHeroService } from './owned-hero.service';
 
@@ -18,8 +19,13 @@ export class OwnedHeroController {
   constructor(private readonly service: OwnedHeroService) {}
 
   @Get()
-  getMyHeroes(@Req() req) {
-    return this.service.findAllForUser(req.user.userId);
+  async getMyHeroes(@Req() req) {
+    const heroes = await this.service.findAllForUser(req.user.id);
+    const stats = this.service.getStats(heroes);
+    return {
+      ...stats,
+      heroes,
+    }
   }
 
   @Post()
@@ -31,5 +37,11 @@ export class OwnedHeroController {
   @Get(':id')
   async getOne(@Param('id') id: number) {
     return this.service.findOneById(id);
+  }
+
+  @Post('fuse')
+  @UseGuards(AuthGuard('jwt'))
+  async fuse(@Req() req, @Body() dto: FuseHeroesDto) {
+    return this.service.fuse(req.user.id, dto);
   }
 }

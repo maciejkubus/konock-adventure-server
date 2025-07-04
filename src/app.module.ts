@@ -7,6 +7,7 @@ import { AuthenticationModule } from './authentication/authentication.module';
 import { DatabaseModule } from './database/database.module';
 import { UsersModule } from './users/users.module';
 import { OwnedHeroModule } from './owned-hero/owned-hero.module';
+import { GachaModule } from './gacha/gacha.module';
 
 @Module({
   imports: [ConfigModule.forRoot(),
@@ -15,6 +16,7 @@ import { OwnedHeroModule } from './owned-hero/owned-hero.module';
     UsersModule,
     AssetsModule,
     OwnedHeroModule,
+    GachaModule,
   ],
   controllers: [AppController],
   providers: [AppService],

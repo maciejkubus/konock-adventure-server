@@ -48,6 +48,18 @@ export class User {
   })
   updated?: Date;
 
+  @Column({ default: 0 })
+  gold: number;
+
+  @Column({ default: 0 })
+  summonScrolls: number;
+
+  @Column({ default: 0 })
+  xp: number;
+
+  @Column({ default: 1 })
+  level: number;
+
   @OneToMany(() => OwnedHero, (ownedHero) => ownedHero.user)
   ownedHeroes: OwnedHero[];
 
