@@ -12,9 +12,14 @@ export interface Ability {
   name: string;
   description: string;
   attack: number;
+  heal: number;
   critChance: number;
   critPower: number;
-  target: 'AoE' | 'single' | 'self';
+  defense: number;
+  speed: number;
+  evation: number;
+  duration: number;
+  target: 'AoE' | 'single' | 'self' | 'team';
 }
 
 export interface HeroTierData {
@@ -26,6 +31,7 @@ export interface HeroTierData {
 export interface Hero {
   id: string;
   name: string;
+  description: string;
   normal: HeroTierData;
   rare: HeroTierData;
   epic: HeroTierData;

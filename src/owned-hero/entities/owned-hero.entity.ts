@@ -14,5 +14,5 @@ export class OwnedHero {
   tier: HeroTier;
 
   @ManyToOne(() => User, (user) => user.ownedHeroes)
-  user: User;
+  user?: User;
 }

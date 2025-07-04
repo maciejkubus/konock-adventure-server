@@ -47,9 +47,11 @@ export class GachaService {
 
     const stats = this.ownedHeroService.getStats(summonedHeroes);
 
+    const heroes = this.ownedHeroService.getHeroesWithoutUser(summonedHeroes);
+
     return {
       stats,
-      heroes: summonedHeroes
+      heroes,
     };
   }
 }

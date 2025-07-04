@@ -13,6 +13,18 @@ export class OwnedHeroService {
     private ownedHeroesRepository:Repository<OwnedHero>,
   ) {}
 
+  getHeroesWithoutUser(heroes: OwnedHero[]) {
+    const filtered: OwnedHero[] = [];
+    for (const hero of heroes) {
+      filtered.push({
+        id: hero.id,
+        heroId: hero.heroId,
+        tier: hero.tier,
+      });
+    }
+    return filtered;
+  }
+
   async findAllForUser(userId: number): Promise<OwnedHero[]> {
     return this.ownedHeroesRepository.find({
       where: { user: { id: userId } },

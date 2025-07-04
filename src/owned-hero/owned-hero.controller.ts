@@ -21,10 +21,11 @@ export class OwnedHeroController {
   @Get()
   async getMyHeroes(@Req() req) {
     const heroes = await this.service.findAllForUser(req.user.id);
+    const filteredHeroes = this.service.getHeroesWithoutUser(heroes);
     const stats = this.service.getStats(heroes);
     return {
       ...stats,
-      heroes,
+      heroes: filteredHeroes,
     }
   }
 
