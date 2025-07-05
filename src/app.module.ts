@@ -5,10 +5,9 @@ import { AppService } from './app.service';
 import { AssetsModule } from './assets/assets.module';
 import { AuthenticationModule } from './authentication/authentication.module';
 import { DatabaseModule } from './database/database.module';
-import { UsersModule } from './users/users.module';
-import { OwnedHeroModule } from './owned-hero/owned-hero.module';
 import { GachaModule } from './gacha/gacha.module';
-import { ExpeditionModule } from './expedition/expedition.module';
+import { OwnedHeroModule } from './owned-hero/owned-hero.module';
+import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [ConfigModule.forRoot(),
@@ -18,7 +17,6 @@ import { ExpeditionModule } from './expedition/expedition.module';
     AssetsModule,
     OwnedHeroModule,
     GachaModule,
-    ExpeditionModule,
   ],
   controllers: [AppController],
   providers: [AppService],

@@ -1,7 +1,6 @@
 import { HeroTier } from 'src/assets/interfaces/hero.interface';
-import { ExpeditionResult } from 'src/expedition/entities/expedition-result.entity';
 import { User } from 'src/users/entities/user.entity';
-import { Column, CreateDateColumn, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
+import { Column, CreateDateColumn, Entity, ManyToOne, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
 
 @Entity()
 export class OwnedHero {
@@ -25,13 +24,4 @@ export class OwnedHero {
 
   @UpdateDateColumn({ nullable: true })
   updated?: Date;
-
-  @OneToMany(() => ExpeditionResult, (expeditionResult) => expeditionResult.front)
-  posFront?: ExpeditionResult[];
-
-  @OneToMany(() => ExpeditionResult, (expeditionResult) => expeditionResult.middle)
-  posMiddle?: ExpeditionResult[];
-
-  @OneToMany(() => ExpeditionResult, (expeditionResult) => expeditionResult.back)
-  posBack?: ExpeditionResult[];
 }
