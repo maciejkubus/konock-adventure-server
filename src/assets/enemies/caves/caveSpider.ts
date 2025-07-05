@@ -12,7 +12,7 @@ export const caveSpider: Enemy = {
   ability: {
     name: 'Venom Spray',
     description: 'Poisons all enemies for 3 turns.',
-    attack: 0,
+    attack: 5,
     heal: 0,
     critChance: 0,
     critPower: 1,

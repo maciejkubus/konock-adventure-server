@@ -8,6 +8,7 @@ import { DatabaseModule } from './database/database.module';
 import { UsersModule } from './users/users.module';
 import { OwnedHeroModule } from './owned-hero/owned-hero.module';
 import { GachaModule } from './gacha/gacha.module';
+import { ExpeditionModule } from './expedition/expedition.module';
 
 @Module({
   imports: [ConfigModule.forRoot(),
@@ -17,6 +18,7 @@ import { GachaModule } from './gacha/gacha.module';
     AssetsModule,
     OwnedHeroModule,
     GachaModule,
+    ExpeditionModule,
   ],
   controllers: [AppController],
   providers: [AppService],

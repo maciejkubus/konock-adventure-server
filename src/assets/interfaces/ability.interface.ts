@@ -11,3 +11,17 @@ export interface Ability {
   duration: number;
   target: 'AoE' | 'single' | 'self' | 'team';
 }
+
+export const dummnyAbility: Ability = {
+  name: "",
+  description: "",
+  attack: 0,
+  heal: 0,
+  critChance: 0,
+  critPower: 0,
+  defense: 0,
+  speed: 0,
+  evation: 0,
+  duration: 0,
+  target: 'self',
+}

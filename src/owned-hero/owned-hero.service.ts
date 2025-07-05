@@ -20,6 +20,7 @@ export class OwnedHeroService {
         id: hero.id,
         heroId: hero.heroId,
         tier: hero.tier,
+        archived: hero.archived,
       });
     }
     return filtered;
@@ -27,7 +28,7 @@ export class OwnedHeroService {
 
   async findAllForUser(userId: number): Promise<OwnedHero[]> {
     return this.ownedHeroesRepository.find({
-      where: { user: { id: userId } },
+      where: { user: { id: userId }, archived: false },
       relations: ['user'],
     });
   }
@@ -67,10 +68,24 @@ export class OwnedHeroService {
     return this.ownedHeroesRepository.findOne({ where: { id }, relations: ['user'] });
   }
 
+  async getOneForFight(id: number) {
+    const ownedHero = await this.findOneById(id);
+
+    if(!ownedHero)
+        throw new NotFoundException(`Hero #${id} not found.`);
+
+    const hero = heroes.find(h => h.id == ownedHero.heroId);
+    return {
+      ownedHero,
+      hero,
+    }
+  }
+
   async fuse(userId: number, dto: FuseHeroesDto): Promise<OwnedHero> {
     const heroes = await this.ownedHeroesRepository.find({
       where: {
         id: In(dto.ownedHeroIds),
+        archived: false,
       },
       relations: ['user'],
     });
@@ -106,8 +121,11 @@ export class OwnedHeroService {
       throw new BadRequestException('Cannot fuse at max tier');
     }
 
-    // Usuń stare
-    await this.ownedHeroesRepository.remove(heroes);
+    // Zarchiwizuj
+    for (const hero of heroes) {
+      hero.archived = true;
+      await this.ownedHeroesRepository.save(hero);
+    }
 
     // Dodaj nowego
     const fused = this.ownedHeroesRepository.create({

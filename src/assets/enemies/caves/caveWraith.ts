@@ -11,8 +11,8 @@ export const caveWraith: Enemy = {
   evasion: 0.12,
   ability: {
     name: 'Fear',
-    description: 'Causes enemies to skip their next turn.',
-    attack: 0,
+    description: 'Causes enemies to take damage.',
+    attack: 10,
     heal: 0,
     critChance: 0,
     critPower: 1,

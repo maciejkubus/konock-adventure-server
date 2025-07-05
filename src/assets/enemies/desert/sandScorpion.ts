@@ -12,7 +12,7 @@ export const sandScorpion: Enemy = {
   ability: {
     name: 'Poison Sting',
     description: 'Poisons a single enemy for 3 turns.',
-    attack: 0,
+    attack: 20,
     heal: 0,
     critChance: 0,
     critPower: 1,

@@ -14,7 +14,7 @@ export const desertBandit: Enemy = {
     description: 'Blinds enemies reducing their accuracy for 2 turns.',
     attack: 0,
     heal: 0,
-    critChance: 0,
+    critChance: -20,
     critPower: 1,
     defense: 0,
     speed: 0,

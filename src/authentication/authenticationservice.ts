@@ -14,7 +14,7 @@ export class AuthenticationService {
     return await this.usersService.validateUser(username, password);
   }
 
-  async login(user: User) {
+  login(user: User) {
     return {
       access_token: this.jwtService.sign({ id: user.id }),
       user: user,
